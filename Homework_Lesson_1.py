@@ -43,4 +43,16 @@ def help_the_rooster_minutes():
     answer = (r*60 + rm + 1440 - n*60 - nm)%1440
     print(f'Your new number is {answer}')
 
-help_the_rooster_minutes()
+
+def help_cheburashka_with_cakes():
+    """
+    Какое нужно минимальное количество тортов, если каждый торт режется на М частей,
+    а к Чебурашке пришли N друзей?
+    """
+    print("Чебурашка и торты")
+    n = int(input("Сколько друзей пришло к Чебурашке? "))
+    m = int(input("Сколько кусочков в каждом торте? "))
+    answer = (n-1)//m+1
+    print(f'Cheburashka will need {answer} cakes')
+
+help_cheburashka_with_cakes()
