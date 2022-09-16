@@ -55,4 +55,45 @@ def help_cheburashka_with_cakes():
     answer = (n-1)//m+1
     print(f'Cheburashka will need {answer} cakes')
 
-help_cheburashka_with_cakes()
+
+def wild_dog_runs():
+    """
+    Собака бегает туда-сюда вдоль забора длиной d со скоростью v.
+    Как только  собака добегает до угла она разворачивается и бежит назад.
+    Куда будет направлена морда через s секунд
+    (0 - в сторону угла, откуда собака начинала свой бег, 1 - в противоположную сторону).
+    """
+    print("Бешеной собаке 3 километра не круг")
+    d = int(input("Расстояние от угла до угла: "))
+    v = int(input("Скорость собаки: "))
+    s = int(input("Сколько секунд собака бежит: "))
+    answer = int((s // ( d / v) + 1) % 2)
+    print(f'Dog is facing to the side No. {answer}')
+
+
+def bit_xray():
+    x = int(input("Исходное число Х в двоичной системе: "), 2)
+    m = int(input("Начальный бит выделения справа: "))
+    n = int(input("Количество выделяемых битов справа: "))
+    answer = (x>>(m-1))%(2**n)
+    print(f'The result is: {bin(answer)}')
+
+
+def switch_on_the_lights():
+    m = int(input("Начальная лампа (бит) справа: "))
+    n = int(input("Конечная лампа (бит) справа: "))
+    x = int(input("Исходное состояние: "), 2)
+    mask = ((1<<(n-m+1))-1)<<(m-1)
+    answer = x|mask
+    print(f'Mask is {bin(mask)}')
+    print(f'Lamps are switched as follows: {bin(answer)}')
+
+
+def switch_off_the_lights():
+    m = int(input("Начальная лампа (бит) справа: "))
+    n = int(input("Конечная лампа (бит) справа: "))
+    x = int(input("Исходное состояние: "), 2)
+    mask = 65535^(((1<<(n-m+1))-1)<<(m-1))
+    answer = x&mask
+    print(f'Mask is {bin(mask)}')
+    print(f'Lamps are switched as follows: {bin(answer)}')
