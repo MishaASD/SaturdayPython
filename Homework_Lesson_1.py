@@ -112,6 +112,6 @@ def switch_off_the_lights():
     n = int(input("Конечная лампа (бит) справа: "))
     x = int(input("Исходное состояние: "), 2)
     mask = 65535^(((1<<(n-m+1))-1)<<(m-1))
-    answer = x&mask
+    answer = x & mask
     print(f'Mask is {bin(mask)}')
     print(f'Lamps are switched as follows: {bin(answer)}')
